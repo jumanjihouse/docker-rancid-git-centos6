@@ -29,6 +29,12 @@ Spin up a container:
     docker run -i -t rancid-git:centos6 bash
 
 
+License
+-------
+
+See LICENSE in this repo.
+
+
 References
 ----------
 
