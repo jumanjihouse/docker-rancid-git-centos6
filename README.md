@@ -20,15 +20,24 @@ Therefore this demo uses Docker to...
 How-to
 ------
 
-On a host with Docker:
+This is an automated build on the
+[Docker Hub](https://registry.hub.docker.com/u/jumanjiman/rancid-git/).
+
+Spin up a container:
+
+    docker pull jumanjiman/rancid-git:centos6
+    docker run -i -t jumanjiman/rancid-git:centos6 bash
+
+Create your own Dockerfile based on this one:
+
+    FROM jumanjiman/rancid-git:centos6
+    # Do other things in your Dockefile.
+
+Build this image locally on a host with Docker:
 
     git clone https://github.com/jumanjihouse/docker-rancid-git-centos6.git
     cd docker-rancid-git-centos6
     docker build --rm -t rancid-git:centos6 .
-
-Spin up a container:
-
-    docker run -i -t rancid-git:centos6 bash
 
 
 License
