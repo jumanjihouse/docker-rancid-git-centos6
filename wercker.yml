@@ -11,7 +11,10 @@ build:
           docker images
     - script:
         name: build the image
-        code: docker build --rm -t rancid-git:centos6 .
+        code: docker build --rm -t jumanjiman/rancid-git:centos6 .
     - script:
         name: test that rancid-git is installed
-        code: docker run --rm -t rancid-git:centos6 rpm -q rancid-git
+        code: docker run --rm -t jumanjiman/rancid-git:centos6 rpm -q rancid-git
+    - script:
+        name: copy rancid-git rpms into docker host
+        code: script/copy_rpms.sh

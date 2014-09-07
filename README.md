@@ -23,6 +23,15 @@ How-to
 This is an automated build on the
 [Docker Hub](https://registry.hub.docker.com/u/jumanjiman/rancid-git/).
 
+:warning: The following commands assume your user account has privilege
+to run the `docker` command.
+
+Copy the SRPM and RPMs from the container into `/tmp/rancid-git-rpms` on the host:
+
+    git clone https://github.com/jumanjihouse/docker-rancid-git-centos6.git
+    cd docker-rancid-git-centos6
+    script/copy_rpms.sh
+
 Spin up a container:
 
     docker pull jumanjiman/rancid-git:centos6
