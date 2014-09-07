@@ -1,0 +1,7 @@
+# https://docs.docker.com/reference/builder/#the-dockerignore-file
+.git
+*/.git
+script
+README.md
+LICENSE
+wercker.yml
