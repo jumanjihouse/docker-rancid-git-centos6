@@ -4,15 +4,15 @@ rancid-git on CentOS 6.5
 Overview
 --------
 
-Demonstrate one way to build rancid-git on CentOS.
+Demonstrate one way to build `rancid-git` on CentOS.
 
-`sysconftool` is needed to build rancid-git,
+`sysconftool` is needed to build `rancid-git`,
 but EPEL currently does not provide `sysconftool`.
 
 Therefore this demo uses Docker to...
 
 * Download the `sysconftool` SRPM from Fedora 20 and build it for CentOS.
-* Build and install rancid-git on CentOS.
+* Build and install `rancid-git` on CentOS.
 
 
 How-to
