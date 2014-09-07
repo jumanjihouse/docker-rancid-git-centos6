@@ -1,6 +1,8 @@
 rancid-git on CentOS 6.5
 ========================
 
+[![wercker status](https://app.wercker.com/status/57224ae02e0259e08c35085410a0098d/s/master "wercker status")](https://app.wercker.com/project/bykey/57224ae02e0259e08c35085410a0098d)
+
 Overview
 --------
 
