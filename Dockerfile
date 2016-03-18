@@ -1,5 +1,8 @@
 FROM centos:7
 
+# Which git commit of rancid-git do we build against?
+ENV hash=400d6121da6ba5d9cc5f3ad49270071dcb8c4674
+
 # epel-release is now available in centos-extras (enabled by default)
 RUN yum -y install epel-release
 
@@ -25,7 +28,7 @@ RUN /tmp/build_sysconftool.sh
 RUN cd /root && \
     git clone https://github.com/dotwaffle/rancid-git.git && \
     cd rancid-git && \
-    git checkout 1112b77780b3a3d888d577518f03f2ccadae44ae -b old_commit && \
+    git checkout ${hash} -b old_commit && \
     yum-builddep -y rancid-git.spec && \
     tito build --rpm --test
 
