@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
-img="jumanjiman/rancid-git:centos6"
-docker run --rm -t -v /tmp/rancid-git-rpms:/tmp/rancid-git-rpms $img find /tmp/tito -regex '.*\.rpm' -exec cp {} /tmp/rancid-git-rpms \;
+. test/vars.bash
+
+mkdir -p /tmp/rancid-git-rpms || :
+docker run --rm -t -v /tmp/rancid-git-rpms:/tmp/rancid-git-rpms ${image} find /tmp/tito -xdev -regex '.*\.rpm' -exec cp {} /tmp/rancid-git-rpms \;
 ls /tmp/rancid-git-rpms/rancid-git*.rpm
