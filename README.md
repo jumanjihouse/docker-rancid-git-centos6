@@ -1,7 +1,6 @@
 rancid-git on CentOS 7
 ======================
 
-[![wercker status](https://app.wercker.com/status/57224ae02e0259e08c35085410a0098d/s/master "wercker status")](https://app.wercker.com/project/bykey/57224ae02e0259e08c35085410a0098d)
 
 Overview
 --------
@@ -42,11 +41,18 @@ Create your own Dockerfile based on this one:
     FROM jumanjiman/rancid-git:centos7
     # Do other things in your Dockefile.
 
-Build this image locally on a host with Docker:
+Build and test this image locally on a host with Docker:
 
     git clone https://github.com/jumanjihouse/docker-rancid-git-centos6.git
     cd docker-rancid-git-centos6
-    docker build --rm -t rancid-git:centos7 .
+    script/build
+    script/test
+
+
+Test output resembles:
+
+    ✓ rancid-git is installed
+    ✓ built rpms are available
 
 
 License

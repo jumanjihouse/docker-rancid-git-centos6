@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. test/vars.bash
+
+docker build --rm -t ${image} .

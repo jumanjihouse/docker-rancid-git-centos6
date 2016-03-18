@@ -12,7 +12,7 @@ RUN yum -y install \
     tar\
     tito \
     yum-utils \
-    ; yum clean all
+    && yum clean all
 
 # create /rpmbuild tree
 RUN rpmdev-setuptree
@@ -22,11 +22,11 @@ ADD build_sysconftool.sh /tmp/
 RUN /tmp/build_sysconftool.sh
 
 # build rancid-git
-RUN cd /root; \
-    git clone https://github.com/dotwaffle/rancid-git.git; \
-    cd rancid-git; \
-    git checkout 1112b77780b3a3d888d577518f03f2ccadae44ae -b old_commit; \
-    yum-builddep -y rancid-git.spec; \
+RUN cd /root && \
+    git clone https://github.com/dotwaffle/rancid-git.git && \
+    cd rancid-git && \
+    git checkout 1112b77780b3a3d888d577518f03f2ccadae44ae -b old_commit && \
+    yum-builddep -y rancid-git.spec && \
     tito build --rpm --test
 
 # install rancid-git
