@@ -1,8 +1,6 @@
 box: wercker-labs/docker
 build:
   steps:
-    - install-packages:
-        packages: lxc-docker=1.2.0
     - script:
         name: print system-wide docker info
         code: |
@@ -11,10 +9,10 @@ build:
           docker images
     - script:
         name: build the image
-        code: docker build --rm -t jumanjiman/rancid-git:centos6 .
+        code: docker build --rm -t jumanjiman/rancid-git:centos7 .
     - script:
         name: test that rancid-git is installed
-        code: docker run --rm -t jumanjiman/rancid-git:centos6 rpm -q rancid-git
+        code: docker run --rm -t jumanjiman/rancid-git:centos7 rpm -q rancid-git
     - script:
         name: copy rancid-git rpms into docker host
         code: script/copy_rpms.sh

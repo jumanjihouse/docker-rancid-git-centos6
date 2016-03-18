@@ -1,5 +1,5 @@
-rancid-git on CentOS 6.5
-========================
+rancid-git on CentOS 7
+======================
 
 [![wercker status](https://app.wercker.com/status/57224ae02e0259e08c35085410a0098d/s/master "wercker status")](https://app.wercker.com/project/bykey/57224ae02e0259e08c35085410a0098d)
 
@@ -13,7 +13,7 @@ but EPEL currently does not provide `sysconftool`.
 
 Therefore this demo uses Docker to...
 
-* Download the `sysconftool` SRPM from Fedora 20 and build it for CentOS.
+* Download the `sysconftool` SRPM from Fedora 23 and build it for CentOS.
 * Build and install `rancid-git` on CentOS.
 
 
@@ -34,19 +34,19 @@ Copy the SRPM and RPMs from the container into `/tmp/rancid-git-rpms` on the hos
 
 Spin up a container:
 
-    docker pull jumanjiman/rancid-git:centos6
-    docker run -i -t jumanjiman/rancid-git:centos6 bash
+    docker pull jumanjiman/rancid-git:centos7
+    docker run -i -t jumanjiman/rancid-git:centos7 bash
 
 Create your own Dockerfile based on this one:
 
-    FROM jumanjiman/rancid-git:centos6
+    FROM jumanjiman/rancid-git:centos7
     # Do other things in your Dockefile.
 
 Build this image locally on a host with Docker:
 
     git clone https://github.com/jumanjihouse/docker-rancid-git-centos6.git
     cd docker-rancid-git-centos6
-    docker build --rm -t rancid-git:centos6 .
+    docker build --rm -t rancid-git:centos7 .
 
 
 License

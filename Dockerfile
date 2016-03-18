@@ -1,4 +1,4 @@
-FROM tianon/centos:6.5
+FROM centos:7
 
 # epel-release is now available in centos-extras (enabled by default)
 RUN yum -y install epel-release
@@ -30,4 +30,4 @@ RUN cd /root; \
     tito build --rpm --test
 
 # install rancid-git
-RUN yum -y localinstall /tmp/tito/x86_64/rancid-git-*.el6.x86_64.rpm
+RUN yum -y localinstall /tmp/tito/x86_64/rancid-git-*.el7.centos.x86_64.rpm
