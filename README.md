@@ -1,6 +1,10 @@
 rancid-git on CentOS 7
 ======================
 
+:warning: This repo is archived.
+
+**See https://github.com/jumanjihouse/docker-rancid-git instead.**
+
 
 Overview
 --------
